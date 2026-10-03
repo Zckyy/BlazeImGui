@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Configure
-        run: cmake -S . -B build -G "Visual Studio 17 2022" -A x64 -DBLAZE_RENDERER_DX11=${{ matrix.dx11 }} -DBLAZE_WARNINGS_AS_ERRORS=ON
+        run: cmake -S . -B build -A x64 -DBLAZE_RENDERER_DX11=${{ matrix.dx11 }} -DBLAZE_WARNINGS_AS_ERRORS=ON
       - name: Build (Release)
         run: cmake --build build --config Release --parallel
       - name: Build (Debug)
